@@ -68,7 +68,8 @@ self.addEventListener('fetch', evt => {
                 return caches.match('/pages/fallback.html')
             }
         })
-    )
+        )
+        
     }
     
 });
