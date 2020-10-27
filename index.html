@@ -41,46 +41,7 @@
   <!-- recipes -->
   <div class="recipes container grey-text text-darken-1">
     <h6 class="center">Recipes</h6>
-    <div class="card-panel recipe white row">
-      <img src="/img/dish.png" alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-      </div>
-      <div class="recipe-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel recipe white row">
-      <img src="/img/dish.png" alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-      </div>
-      <div class="recipe-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel recipe white row">
-      <img src="/img/dish.png" alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-      </div>
-      <div class="recipe-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel recipe white row">
-      <img src="/img/dish.png" alt="recipe thumb">
-      <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-      </div>
-      <div class="recipe-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
+    
   </div>
 
   <div class="center">
@@ -107,7 +68,32 @@
       </div>
     </form>
   </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB1GxU489z6lvGsnJ3aIa-1nW4BYBZhetI",
+      authDomain: "train-e5faa.firebaseapp.com",
+      databaseURL: "https://train-e5faa.firebaseio.com",
+      projectId: "train-e5faa",
+      storageBucket: "train-e5faa.appspot.com",
+      messagingSenderId: "408898417252",
+      appId: "1:408898417252:web:9da7d57f98e27fbf8f6571"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db=firebase.firestore();
+    db.collection('recipes').onSnapshot((snapshot) => {
+    console.log(snapshot.docChanges());
+})
+  </script>
   <script src="/js/app.js"></script>
+  <script src="/js/db.js"></script>
   <script src="/js/ui.js"></script>
 </body>
 </html>
